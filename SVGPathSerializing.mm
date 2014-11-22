@@ -150,7 +150,12 @@ CGPathRef svgParser::readRectTag()
                      * const widthDef  = (char *)xmlTextReaderGetAttribute(_xmlReader, (xmlChar*)"width"),
                      * const heightDef = (char *)xmlTextReaderGetAttribute(_xmlReader, (xmlChar*)"height");
 
-    CGRect const rect = { (CGFloat)atof(xDef), (CGFloat)atof(yDef), (CGFloat)atof(widthDef), (CGFloat)atof(heightDef) };
+	CGFloat const xPos = (xDef != NULL) ? atof(xDef) : 0.0f;
+	CGFloat const yPos = (yDef != NULL) ? atof(yDef) : 0.0f;
+	CGFloat const width = (widthDef != NULL) ? atof(widthDef) : 0.0f;
+	CGFloat const height = (heightDef != NULL) ? atof(heightDef) : 0.0f;
+	
+    CGRect const rect = { xPos, yPos, width, height };
     NSString * const pathDefinition = [NSString stringWithFormat:
                                        @"M %f %f "
                                        @"H %f V %f"
