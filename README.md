@@ -1,3 +1,7 @@
+# This fork has been merged back to [PocketSVG](https://github.com/pocketsvg/PocketSVG)
+
+---
+
 # PocketSVG
 A simple toolkit for reading reading/writing bezier paths to/from SVG. Only the path, polygon, & rectangle elements are supported.
 
